@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lost Item Authentication</title>
+  <link rel="stylesheet" type="text/css" href="authcss.css">
+  <script>
+    function allowDrop(event) {
+      event.preventDefault();
+    }
+
+    function handleFileSelect(event) {
+      event.preventDefault();
+      var files = event.dataTransfer.files;
+
+      if (files.length > 0) {
+        var file = files[0];
+        var reader = new FileReader();
+        
+        reader.onload = function(event) {
+          document.getElementById('proofPreview').src = event.target.result;
+        };
+        
+        reader.readAsDataURL(file);
+      }
+    }
+
+    function uploadImage() {
+      var fileInput = document.getElementById("fileInput");
+      fileInput.click();
+    }
+
+    function toggleUploadButton() {
+      var uploadButton = document.getElementById("uploadButton");
+      var proofOfOwnershipChecked = document.getElementById("proofOfOwnership").checked;
+
+      if (proofOfOwnershipChecked) {
+        uploadButton.style.display = "block";
+      } else {
+        uploadButton.style.display = "none";
+      }
+    }
+
+    function authenticateItem() {
+      var authenticationMethod = document.querySelector('input[name="authMethod"]:checked').value;
+      var inputValue = "";
+
+      if (authenticationMethod !== "proofOfOwnership") {
+        inputValue = document.getElementById(authenticationMethod).value;
+      } else {
+        // For proof of ownership through image, add your logic here
+        // You might need to handle the image file data
+        // For demo purposes, I'm using a placeholder
+        inputValue = "Image file data or URL";
+      }
+
+      // Mocked stored authentication values
+      var storedSerialNumber = "yourSerialNumber"; // Replace with your stored serial number
+      var storedUniqueDetails = "yourUniqueDetails"; // Replace with your stored unique details
+      var storedProofOfOwnership = "valid"; // Replace with your stored proof of ownership value
+
+      // Perform authentication checks based on selected method
+      if (authenticationMethod === "serialNumber" && /^[0-9A-Fa-f]+$/.test(inputValue) && inputValue === storedSerialNumber) {
+        alert("Authentication successful! This item might be yours.");
+      } else if (authenticationMethod === "uniqueDetails" && inputValue === storedUniqueDetails) {
+        alert("Authentication successful! This item might be yours.");
+      } else if (authenticationMethod === "proofOfOwnership" && inputValue === storedProofOfOwnership) {
+        alert("Authentication successful! This item might be yours.");
+      } else {
+        alert("Authentication failed. Unable to verify ownership.");
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h2 class="title">Lost Item Authentication</h2>
+    <form>
+      <label>
+        <input type="radio" name="authMethod" value="serialNumber"> Serial Number		
+      </label><br>
+      <input type="text" class="input-field" id="serialNumber" name="serialNumber" pattern="[0-9A-Fa-f]+" title="Please enter hexadecimal values" placeholder="IMEI, Product No. etc"><br><br>
+      
+      <label>
+        <input type="radio" name="authMethod" value="uniqueDetails"> Unique Details
+      </label><br>
+      <input type="text" class="input-field" id="uniqueDetails" name="uniqueDetails" placeholder="Item's Description"><br><br>
+      
+      <label>
+        <input type="radio" name="authMethod" id="proofOfOwnership" value="proofOfOwnership" onchange="toggleUploadButton()"> Proof of Ownership (Drag & Drop Image)
+      </label><br>
+      <div class="drop-area" ondrop="handleFileSelect(event)" ondragover="allowDrop(event)">
+        <p>Drag and drop image here</p>
+      </div>
+      <input type="file" id="fileInput" style="display: none;"><br><br>
+      <button class="upload-button" style="display: none;" onclick="uploadImage()">Upload</button>
+      <img id="proofPreview" src="" class="proof-preview" style="max-width: 300px;"><br><br>
+      
+      <input type="button" class="authenticate-button" value="Authenticate" onclick="authenticateItem()">
+    </form>
+  </div>
+</body>
+</html>

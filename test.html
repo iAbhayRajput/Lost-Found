@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Stop University Access</title>
+    <link rel="stylesheet" href="tike.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="script.js" defer></script>
+    <script src="report.js" defer></script>
+    <style>
+        .dashboard-item {
+            flex: 1 0 300px;
+            background-color: #f2f2f2;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255, 0);
+        }
+
+        .dashboard-item h2 {
+            color: #333;
+        }
+
+        /* Add a new style for the button box */
+        .button-box {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* background-color: #4CAF50;  */
+            color: white;
+        }
+
+        .button-box button {
+            background-color: white;
+            color: black;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            
+        }
+
+        .button-box button:hover {
+            background-color: grey;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="topnav">
+        <div class="logo">
+            <img align="right" width="5%" height="7.7%" src="logo1.png" alt="Logo">
+        </div>
+    </div>
+
+    <h1><center>Welcome to Lost and Found </center></h1>
+
+    <div class="dashboard">
+        <div class="dashboard-item">
+            <section id="report-section">
+                <h2>Report a Lost Item</h2>
+                <form id="report-form">
+                    <label for="itemName">Item Name:</label>
+                    <input type="text" id="itemName" required>
+
+                    <select id="Categories" name="Categories" onchange="displayItems()">
+                        <option value="Select">Select Your category</option>
+                        <option value="jewellery">Jewellery</option>
+                        <option value="electronics">Electronics</option>
+                        <option value="bags">Bags</option>
+                        <option value="documents">Documents</option>
+                        <option value="keys">Keys</option>
+                    </select>
+                
+                    <label for="description">Description:</label>
+                    <textarea id="description" required></textarea>
+
+                    <div class="button-container">
+                        <button type="button" onclick="reportLostItem()">Report Item</button>
+                    </div>
+                </form>
+            </section>
+        </div>
+
+        <div class ="dashboard-item">
+            <section id="report-section">
+                <h1>To find the item </h1>
+                <div class="button-container ">
+    
+                    <!-- <button type="button" onclick="reportFoundItem()">Find Item</button> -->
+                    <button type="button" onclick="toFindItem()">Find Item</button>
+    
+                </div>
+            </section>
+             <!-- New box for the Found Item button -->
+        
+    </div>
+        </div>
+       
+</body>
+
+</html>

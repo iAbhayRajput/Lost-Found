@@ -1,0 +1,62 @@
+.dashboard-item {
+    flex: 1 0 300px;
+    background-color: #f2f2f2;
+    padding: 100px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* text-align: center; */
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.dashboard-item {
+    flex: 1 0 300px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.5);
+    margin-top: 20px;
+}
+
+.items-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.item-box {
+    flex: 1 0 calc(33.33% - 20px);
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    font-size: 16px; /* Increased font size */
+    text-align: center;
+}
+
+.item-button {
+    margin-top: 10px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.time-filter {
+    margin-top: 20px;
+}
+
+.time-filter label {
+    font-size: 40px; /* Increased font size */
+}
+
+.time-filter input {
+    font-size: 30px; /* Increased font size */
+}
+
+.time-filter button {
+    font-size: 25px; /* Increased font size */
+}

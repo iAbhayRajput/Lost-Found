@@ -1,0 +1,98 @@
+
+.column-4 {
+  float: left;
+  width: 19%;
+  padding: 10px;
+  margin:;
+  height: 130px;
+  opacity:0.6;
+  align:center;
+}
+.project-1 {
+	float: left;
+  width: 12%;
+  padding: 0px;
+  margin:;
+  height: 130px;
+  opacity:0.6;
+	
+}
+
+
+.project-2 {
+  background-color:#F9F7C9;
+  border-radius:50px 0px 0px 50px;
+}
+
+.project-3 {
+  background-color:#F9F7F7;
+}
+
+.project-4 {
+  background-color:#F9F7F7;
+}
+
+.project-5 {
+  background-color:#F9F7F7;
+}
+
+.project-6 {
+  background-color:#F9F7F7;
+}
+
+.project-7 {
+    background-color:#F9F7C9;
+}
+
+.project-8 {
+  background-color:#F9F7F7;
+  
+}
+.project-9{
+  background: url('../images/project-center.jpeg');
+  background-size: cover;
+}
+.project-text {
+  text-align:center;
+  font-size:30px;
+}
+
+.project-2:hover {
+  background-color:#FEDE00;
+}
+
+.project-3:hover {
+   background-color: #FEDE00;
+}
+
+.project-4:hover {
+   background-color: #FEDE00;
+}
+
+.project-5:hover {
+   background-color: #FEDE00;
+}
+
+.project-6:hover {
+   background-color: #FEDE00;
+}
+
+.project-7:hover {
+   background-color: #FEDE00;
+}
+.project-8:hover {
+   background-color: #FEDE00;
+}
+
+body{
+background-image: url("https://i.ibb.co/dtK5z1F/srm.jpg");
+background-size: cover ;
+}
+div.if{
+	align:center;
+ position: fixed;
+  bottom: 11px;
+  right: 5;
+  width: 44.35%;
+  border-style:ridge;
+}

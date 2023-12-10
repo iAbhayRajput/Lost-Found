@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Stop University Access</title>
+    <link rel="stylesheet" href="tike.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="find.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="script.js" defer></script>
+    <script src="test.js" defer></script>
+
+
+    <style>
+        
+    </style>
+</head>
+
+<body>
+    <div class="topnav">
+        <div class="logo">
+            <img align="right" width="5%" height="7.7%" src="logo1.png" alt="Logo">
+        </div>
+    </div>
+
+    <h1 class="center-content">Welcome, the items which you lost might be listed over here.</h1>
+
+    <div class="center dashboard-item">
+        <label class="center-content" for="Categories">Categories</label>
+        <div class="center-content">
+            <select id="Categories" name="Categories" class = onchange="displayItems()">
+                <option value="Select">Select Your category</option>
+                <option  value="jewellery">Jewellery</option>
+                <option value="electronics">Electronics</option>
+                <option value="bags">Bags</option>
+                <option value="documents">Documents</option>
+                <option value="keys">Keys</option>
+            </select>
+        </div>
+
+        <div class="time-filter">
+            <label for="startDate">Start Date:</label>
+            <input type="date" id="startDate">
+            <label for="endDate">End Date:</label>
+            <input type="date" id="endDate">
+            <button onclick="filterByTime()">Apply Filter</button>
+        </div>
+
+        <div id="itemsContainer" class="items-container center-content"></div>
+    </div>
+
+    <script>
+   
+    </script>
+</body>
+
+</html>
